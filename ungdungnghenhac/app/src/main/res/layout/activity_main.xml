@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background=""
+    tools:context=".MainActivity">
+<!--<androidx.appcompat.widget.Toolbar-->
+<!--    android:id="@+id/toolbar"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="?attr/actionBarStyle">-->
+
+<!--</androidx.appcompat.widget.Toolbar>-->
+
+<!--    <androidx.viewpager.widget.ViewPager-->
+<!--        android:id="@+id/viewPager"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="7">-->
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="547dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/image" />
+
+<!--    </androidx.viewpager.widget.ViewPager>-->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textviewtimesong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:text="00:00"
+            android:textColor="#ffff"
+            android:textStyle="bold"></TextView>
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_weight="9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></SeekBar>'
+        <TextView
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:text="00:00"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:id="@+id/textviewtotaltimesong"
+            android:textColor="#ffff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+                <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:src="@drawable/icon_shuffle"
+                    android:scaleType="fitXY"
+                    android:background="@null"
+                    android:id="@+id/iconshuffle"
+                    android:layout_marginRight="15dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp" />
+                <ImageButton
+                    android:src="@drawable/icon_previous"
+                    android:scaleType="fitXY"
+                    android:background="@null"
+                    android:id="@+id/iconprevious"
+                    android:layout_marginRight="15dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"></ImageButton>
+                <ImageButton
+                    android:src="@drawable/icon_play"
+                    android:scaleType="fitXY"
+                    android:background="@null"
+                    android:id="@+id/iconplay"
+                    android:layout_marginRight="15dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"></ImageButton>
+                    <ImageButton
+                        android:src="@drawable/icon_next"
+                        android:scaleType="fitXY"
+                        android:background="@null"
+                        android:id="@+id/iconnext"
+                        android:layout_marginRight="15dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"></ImageButton>
+                    <ImageButton
+                        android:src="@drawable/icon_repeat"
+                        android:scaleType="fitXY"
+                        android:background="@null"
+                        android:id="@+id/iconrepeat"
+                        android:layout_marginRight="15dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"></ImageButton>
+                </LinearLayout>
+</LinearLayout>
+
+</LinearLayout>
