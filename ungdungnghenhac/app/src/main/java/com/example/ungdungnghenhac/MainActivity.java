@@ -9,6 +9,8 @@ import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -18,60 +20,51 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-   Toolbar toolbar;
-   SeekBar seekbar;
-   TextView textviewtimesong, textviewtotaltimesong;
-   ImageButton iconprevious, iconnext, iconshuffle, iconplay, iconrepeat;
-   ViewPager viewPager;
+    Toolbar toolbar;
+    SeekBar seekbar;
+    TextView textviewtimesong, textviewtotaltimesong;
+    ImageButton btnprevious, btnnext, btnshuffle, btnplay, btnrepeat;
+    MediaPlayer mediaPlayer;
+    int totalTime;
+    int position = 0; //get index số bao nhiêu
+    ArrayList<Song> listSong;
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
-//        addSong();
+        addSong();
+        btnplay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this, listSong.get(position).getFile());
+                mediaPlayer.start();
+            }
+        });
+
+
     }
+
+    private void addSong() {
+        listSong = new ArrayList<>();
+        listSong.add(new Song("Mùa để yêu thương", R.raw.mua_de_yeu_thuong));
+    }
+
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    private void init(){
-//        toolbar = (Toolbar)findViewById(R.id.toolbar);
+    private void init() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         seekbar = findViewById(R.id.seekbar);
-        textviewtimesong = (TextView)findViewById(R.id.textviewtimesong);
-        textviewtotaltimesong = (TextView)findViewById(R.id.textviewtotaltimesong);
-        iconprevious = (ImageButton)findViewById(R.id.iconprevious);
-        iconnext = (ImageButton)findViewById(R.id.iconnext);
-        iconshuffle = (ImageButton)findViewById(R.id.iconshuffle);
-        iconplay = (ImageButton)findViewById(R.id.iconplay);
-        iconrepeat = (ImageButton)findViewById(R.id.iconrepeat);
-        MediaPlayer mediaPlayer;
-//        mediaPlayer = MediaPlayer.create(this,R.raw.Hello );
-//        mediaPlayer.setLooping(true);
-    }
-//    private void addSong(){
-//        song = new ArrayList<Song>()
-//    }
-    class playMusic extends AsyncTask<String,Void,String> {
-        @Override
-        protected String doInBackground(String... strings) {
-            return strings[0];
-        }
-        protected void OnPostExecute(String song) throws IOException {
-            super.onPostExecute(song);
-            final MediaPlayer mediaPlayer = new MediaPlayer();
-            mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                @Override
-                public void onCompletion(MediaPlayer mp) {
-                    mediaPlayer.stop();
-                    mediaPlayer.reset();
-                }
-            });
-            mediaPlayer.setDataSource(song);
-            mediaPlayer.prepare();
-            mediaPlayer.start();
+        textviewtimesong = (TextView) findViewById(R.id.textviewtimesong);
+        textviewtotaltimesong = (TextView) findViewById(R.id.textviewtotaltimesong);
+        btnprevious = (ImageButton) findViewById(R.id.btnprevious);
+        btnnext = (ImageButton) findViewById(R.id.btnnext);
+        btnshuffle = (ImageButton) findViewById(R.id.btnshuffle);
+        btnplay = (ImageButton) findViewById(R.id.btnplay);
+        btnrepeat = (ImageButton) findViewById(R.id.btnrepeat);
 
 
-
-        }
     }
 }

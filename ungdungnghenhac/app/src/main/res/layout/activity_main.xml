@@ -2,33 +2,28 @@
 <LinearLayout
 
     android:orientation="vertical"
+    android:gravity="center_horizontal"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background=""
+
     tools:context=".MainActivity">
-<!--<androidx.appcompat.widget.Toolbar-->
-<!--    android:id="@+id/toolbar"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="?attr/actionBarStyle">-->
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarStyle">
 
-<!--</androidx.appcompat.widget.Toolbar>-->
+</androidx.appcompat.widget.Toolbar>
 
-<!--    <androidx.viewpager.widget.ViewPager-->
-<!--        android:id="@+id/viewPager"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_weight="7">-->
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="547dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:src="@drawable/image" />
 
-<!--    </androidx.viewpager.widget.ViewPager>-->
 
     <LinearLayout
         android:orientation="vertical"
@@ -80,7 +75,7 @@
                     android:src="@drawable/icon_shuffle"
                     android:scaleType="fitXY"
                     android:background="@null"
-                    android:id="@+id/iconshuffle"
+                    android:id="@+id/btnshuffle"
                     android:layout_marginRight="15dp"
                     android:layout_width="50dp"
                     android:layout_height="50dp" />
@@ -88,7 +83,7 @@
                     android:src="@drawable/icon_previous"
                     android:scaleType="fitXY"
                     android:background="@null"
-                    android:id="@+id/iconprevious"
+                    android:id="@+id/btnprevious"
                     android:layout_marginRight="15dp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"></ImageButton>
@@ -96,7 +91,7 @@
                     android:src="@drawable/icon_play"
                     android:scaleType="fitXY"
                     android:background="@null"
-                    android:id="@+id/iconplay"
+                    android:id="@+id/btnplay"
                     android:layout_marginRight="15dp"
                     android:layout_width="60dp"
                     android:layout_height="60dp"></ImageButton>
@@ -104,7 +99,7 @@
                         android:src="@drawable/icon_next"
                         android:scaleType="fitXY"
                         android:background="@null"
-                        android:id="@+id/iconnext"
+                        android:id="@+id/btnnext"
                         android:layout_marginRight="15dp"
                         android:layout_width="50dp"
                         android:layout_height="50dp"></ImageButton>
@@ -112,7 +107,7 @@
                         android:src="@drawable/icon_repeat"
                         android:scaleType="fitXY"
                         android:background="@null"
-                        android:id="@+id/iconrepeat"
+                        android:id="@+id/btnrepeat"
                         android:layout_marginRight="15dp"
                         android:layout_width="50dp"
                         android:layout_height="50dp"></ImageButton>
